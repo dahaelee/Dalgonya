@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80645b2c59dee6f45be2a8aab5378539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabTutorial: {fileID: 4728049553516547341, guid: ab3405ae1d8c9704697e21cd6c0785ea,
+  prefabTutorial: {fileID: 2920343870851008922, guid: ac2ca06c6767e8b478f0d17bd365e892,
     type: 3}
 --- !u!114 &1098525043
 MonoBehaviour:
@@ -1618,11 +1618,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1368025509}
   stageTips:
-  - {fileID: 1661631102198471577, guid: 9cf86929cd9d985449f17d8f07117df0, type: 3}
-  - {fileID: 5366208970043135902, guid: 41708b12e2fef224abfa1f10698e5b65, type: 3}
-  - {fileID: 4502573220356809531, guid: ba45776ef859c834aa8f313ba22b9bb3, type: 3}
-  - {fileID: 2614291094025532661, guid: 6714d9c9809f109479aa421bd24cb3f5, type: 3}
-  - {fileID: 3940553161940107462, guid: a4e0a9b2ee0e45a4dacd06337753a93a, type: 3}
+  - {fileID: 5368800585234138161, guid: 9cf86929cd9d985449f17d8f07117df0, type: 3}
+  - {fileID: 8633470236145596809, guid: 41708b12e2fef224abfa1f10698e5b65, type: 3}
+  - {fileID: 7576295636404337436, guid: ba45776ef859c834aa8f313ba22b9bb3, type: 3}
+  - {fileID: 1295474144727753033, guid: 6714d9c9809f109479aa421bd24cb3f5, type: 3}
+  - {fileID: 4417454713513829662, guid: a4e0a9b2ee0e45a4dacd06337753a93a, type: 3}
   startTipIndex: 1
   preInstantiate: 5
   generatedStageList:
