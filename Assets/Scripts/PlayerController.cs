@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,8 +11,7 @@ public class PlayerController : MonoBehaviour
     CharacterController controller;
     //Animator animator;
 
-    Vector3 moveDirection = Vector3.zero;
-    int targetLane;
+    Vector3 moveDirection = new Vector3(0.0f, 0.5f, -0.0f);
     int life = DefaultLife;
     float recoverTime = 0.0f;
 
@@ -40,13 +40,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
             MoveToLeft();
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
             MoveToRight();
         if (Input.GetKeyDown(KeyCode.Space))
             Jump();
 
+        // 스턴 상태일 때 좌우 이동 막기
         if (IsStun())
         {
             moveDirection.x = 0.0f;
@@ -59,10 +60,6 @@ public class PlayerController : MonoBehaviour
             // Z방향으로 천천히 가속
             float acceleratedZ = moveDirection.z + (accelerationZ * Time.deltaTime);
             moveDirection.z = Mathf.Clamp(acceleratedZ, 0, speedZ);
-
-            //// X방향 움직임 계산
-            //float ratioX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
-            //moveDirection.x = ratioX * speedX;
         }
 
         // 중력만큼의 힘을 매 프레임에 추가
@@ -83,23 +80,22 @@ public class PlayerController : MonoBehaviour
     {
         if (IsStun()) // 스턴상태인지 체크
             return;
-        //if (controller.isGrounded && targetLane > MinLane - 2)
-        //    targetLane -= 2;
+        //if (controller.isGrounded)
+            moveDirection.x = -speedX;
     }
 
     public void MoveToRight()
     {
         if (IsStun()) // 스턴상태인지 체크
             return;
-        //if (controller.isGrounded && targetLane < MaxLane + 2)
-        //    targetLane += 2;
+        moveDirection.x = speedX;
     }
 
     public void Jump()
     {
         if (IsStun()) // 스턴상태인지 체크
             return;
-        moveDirection.y = speedJump * 2f;
+        moveDirection.y = speedJump;
 
         // 애니메이터에 점프 트리거를 설정
         //animator.SetTrigger("jump");
