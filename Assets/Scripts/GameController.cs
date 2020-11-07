@@ -10,11 +10,12 @@ public class GameController : MonoBehaviour
 	public PlayerController player;
 	public Text scoreLabel;
 	public LifePanel lifePanel;
+	public int itemscore = 0;
 
 	public void Update()
 	{
 		// 점수 업데이트 
-		int score = CalcScore();
+		int score = CalcScore() + itemscore;
 		scoreLabel.text = "SCORE " + score;
 
 		// 생명 업데이트

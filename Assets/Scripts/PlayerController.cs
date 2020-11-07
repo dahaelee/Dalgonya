@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public float speedJump;
     public float accelerationZ;
 
+
     public int Life()
     {
         return life;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
         controller = GetComponent<CharacterController>();
         //animator = GetComponent<Animator>();
     }
@@ -107,10 +109,14 @@ public class PlayerController : MonoBehaviour
             return;
 
         // 장애물 태그 별로 다르게 반응하기
-        if (hit.gameObject.tag == "heartminus") 
+        if (hit.gameObject.tag == "heartminus")
+        {
             Debug.Log("하트마이너스");
-
-        if (hit.gameObject.tag == "reverse")
+        }
+        else if (hit.gameObject.tag == "reverse")
+        {
             Debug.Log("반전");
+        }
+        
     }
 }
