@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: catanima
+  m_Name: CatAniRun
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: decef23b9d9703e4aae4ab5e293f5771, type: 3}
+      value: {fileID: 21300000, guid: 7263e18439af8134dbc890d223b0c1fe, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 2d372667b75e7274e94e22c622668ca2, type: 3}
+      value: {fileID: 21300000, guid: 88ed35f4e771d964ead94cc8fb6907bd, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: 5be82042b99da8349a5570d8a7d7cc18, type: 3}
+      value: {fileID: 21300000, guid: 6e8eefba1cd6db441befe0da9dd7dcc8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: decef23b9d9703e4aae4ab5e293f5771, type: 3}
-    - {fileID: 21300000, guid: 2d372667b75e7274e94e22c622668ca2, type: 3}
-    - {fileID: 21300000, guid: 5be82042b99da8349a5570d8a7d7cc18, type: 3}
+    - {fileID: 21300000, guid: 7263e18439af8134dbc890d223b0c1fe, type: 3}
+    - {fileID: 21300000, guid: 88ed35f4e771d964ead94cc8fb6907bd, type: 3}
+    - {fileID: 21300000, guid: 6e8eefba1cd6db441befe0da9dd7dcc8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
