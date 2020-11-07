@@ -28,7 +28,6 @@ public class ChangeScene : MonoBehaviour
             MainLoad();
         if (Input.GetKeyDown(KeyCode.BackQuote))
             TutorialLoad();
-
     }
 
     public void MainLoad()
