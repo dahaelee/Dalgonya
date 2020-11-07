@@ -6,14 +6,15 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
     const int DefaultLife = 3; // 생명 개수 
-    const float StunDuration = 0.5f; // 스턴상태 유지시간 
+    const float StunDuration = 0.7f; // 스턴상태 유지시간 
+    const float catnipDuration = 5.0f; // 캡닛상태 유지시간
 
     CharacterController controller;
-    //Animator animator;
 
     Vector3 moveDirection = new Vector3(0.0f, 0.5f, -0.0f);
     int life = DefaultLife;
     float recoverTime = 0.0f;
+    float catnipTime = 0.0f;
 
     public float gravity;
     public float speedZ;
@@ -21,6 +22,12 @@ public class PlayerController : MonoBehaviour
     public float speedJump;
     public float accelerationZ;
 
+    Animator anima;
+    PlayerController playercont;
+    GameController gamecont;
+
+    public AudioSource bgm_normal, bgm_catnip, nya1, nya2;
+    public GameObject catnipSky;
 
     public int Life()
     {
@@ -33,11 +40,18 @@ public class PlayerController : MonoBehaviour
         return recoverTime > 0.0f || life <= 0; // 회복 중이거나 생명 다 썼을 때 
     }
 
+    public bool IsCatnip()
+    {
+        return catnipTime > 0.0f;
+    }
+
     void Start()
     {
-
         controller = GetComponent<CharacterController>();
-        //animator = GetComponent<Animator>();
+        anima = GameObject.Find("img").GetComponent<Animator>();
+        playercont = GetComponent<PlayerController>();
+        gamecont = GameObject.Find("GameController").GetComponent<GameController>();
+        catnipSky.SetActive(false);
     }
 
     void Update()
@@ -47,7 +61,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
             MoveToRight();
         if (Input.GetKeyDown(KeyCode.Space))
+        {
             Jump();
+        }
+
+        // 공중에 떠있으면 점프 애니메이션
+        if (!controller.isGrounded & !IsStun()) 
+            anima.SetInteger("Input", 1);
 
         // 스턴 상태일 때 좌우 이동 막기
         if (IsStun())
@@ -71,11 +91,26 @@ public class PlayerController : MonoBehaviour
         Vector3 globalDirection = transform.TransformDirection(moveDirection);
         controller.Move(globalDirection * Time.deltaTime);
 
-        // 이동 후 접지하고 있으면 Y방향의 속도는 리셋
+        // 이동 후 땅에 닿아있으면 Y방향의 속도는 리셋
         if (controller.isGrounded) moveDirection.y = 0;
 
-        // 속도가 0 이상이면 애니메이터에 달리고 있는 플래그를 true로 
-        //animator.SetBool("run", moveDirection.z > 0.0f);
+        if (IsCatnip())
+        {
+            catnipTime -= Time.deltaTime;
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+                MoveToRight();
+            if (Input.GetKey(KeyCode.RightArrow))
+                MoveToLeft();
+
+            catnipSky.SetActive(true);
+            bgm_normal.pitch = 2.0f;
+        }
+        if (!IsCatnip())
+        {
+            catnipSky.SetActive(false);
+            bgm_normal.pitch = 1.0f;
+        }
     }
 
     public void MoveToLeft()
@@ -111,12 +146,35 @@ public class PlayerController : MonoBehaviour
         // 장애물 태그 별로 다르게 반응하기
         if (hit.gameObject.tag == "heartminus")
         {
-            Debug.Log("하트마이너스");
+            nya1.PlayOneShot(nya1.clip);
+            recoverTime = StunDuration;
+            life--;
+            anima.SetInteger("Input", -1);
+            Destroy(hit.gameObject);
         }
         else if (hit.gameObject.tag == "reverse")
         {
-            Debug.Log("반전");
+            nya1.PlayOneShot(nya1.clip);
+            recoverTime = StunDuration;
+            catnipTime = catnipDuration;
+            anima.SetInteger("Input", 2);
+            Destroy(hit.gameObject, 0.7f);
         }
-        
+        else anima.SetInteger("Input", 0);
+
+        if (hit.gameObject.tag == "Sil")
+        {
+            gamecont.itemscore = 30;
+        }
+
+        else if (hit.gameObject.tag == "Mouse")
+        {
+            gamecont.itemscore = 50;
+        }
+
+        else if (hit.gameObject.tag == "Tuna")
+        {
+            gamecont.itemscore = 100;
+        }
     }
 }

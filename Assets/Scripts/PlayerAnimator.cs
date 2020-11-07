@@ -61,7 +61,5 @@ public class PlayerAnimator : MonoBehaviour
         {
             gamecont.itemscore = 100;
         }
-
-        Debug.Log(gamecont.itemscore);
     }
 }
