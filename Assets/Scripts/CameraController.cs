@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    Vector3 diff;
+    public float zdiff;
     public GameObject target;
     public float followSpeed;
 
     void Start()
     {
-        diff = target.transform.position - transform.position;
+        zdiff = target.transform.position.z - transform.position.z;
     }
 
     void Update()
     {
-        transform.position = Vector3.Lerp(
-            transform.position,
-            target.transform.position - diff,
-            Time.deltaTime * followSpeed
-        );
+        transform.position = new Vector3(transform.position.x,
+                                         transform.position.y,
+                                         Mathf.Lerp(transform.position.z, target.transform.position.z-zdiff, Time.deltaTime * followSpeed));
     }
 }
