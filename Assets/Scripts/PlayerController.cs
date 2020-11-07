@@ -80,7 +80,6 @@ public class PlayerController : MonoBehaviour
     {
         if (IsStun()) // 스턴상태인지 체크
             return;
-        //if (controller.isGrounded)
             moveDirection.x = -speedX;
     }
 
@@ -95,7 +94,8 @@ public class PlayerController : MonoBehaviour
     {
         if (IsStun()) // 스턴상태인지 체크
             return;
-        moveDirection.y = speedJump;
+        if (controller.isGrounded)
+            moveDirection.y = speedJump;
 
         // 애니메이터에 점프 트리거를 설정
         //animator.SetTrigger("jump");

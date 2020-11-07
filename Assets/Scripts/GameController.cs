@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
 	int CalcScore()
 	{
 		// 점수 : 이동한 거리 (나중에 아이템점수 추가하기)
-		return (int)player.transform.position.z * 1000;
+		return (int)player.transform.position.z * 100;
 	}
 
 	void loadTitle()

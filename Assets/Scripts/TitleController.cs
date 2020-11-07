@@ -14,7 +14,13 @@ public class TitleController : MonoBehaviour
 		highScore.text = "HIGH SCORE : " + PlayerPrefs.GetInt("highScore");
 	}
 
-	public void loadMain()
+    public void Update()
+    {
+		if (Input.anyKeyDown)
+			loadMain();
+	}
+
+    public void loadMain()
 	{
 		SceneManager.LoadScene("Main");
 	}
