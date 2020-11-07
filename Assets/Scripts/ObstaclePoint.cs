@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPoint : MonoBehaviour
+public class ObstaclePoint : MonoBehaviour
 {
-
 	public GameObject prefab;
 
 	void Start()
@@ -14,7 +13,6 @@ public class EnemyPoint : MonoBehaviour
 			Vector3.zero,
 			Quaternion.identity);
 
-		// Set enemy object to child
 		go.transform.SetParent(transform, false);
 	}
 
