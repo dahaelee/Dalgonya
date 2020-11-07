@@ -1618,7 +1618,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1368025509}
   stageTips:
-  - {fileID: 5680513203771983219, guid: 9cf86929cd9d985449f17d8f07117df0, type: 3}
+  - {fileID: 1661631102198471577, guid: 9cf86929cd9d985449f17d8f07117df0, type: 3}
+  - {fileID: 5366208970043135902, guid: 41708b12e2fef224abfa1f10698e5b65, type: 3}
+  - {fileID: 4502573220356809531, guid: ba45776ef859c834aa8f313ba22b9bb3, type: 3}
+  - {fileID: 2614291094025532661, guid: 6714d9c9809f109479aa421bd24cb3f5, type: 3}
+  - {fileID: 3940553161940107462, guid: a4e0a9b2ee0e45a4dacd06337753a93a, type: 3}
   startTipIndex: 1
   preInstantiate: 5
   generatedStageList:
