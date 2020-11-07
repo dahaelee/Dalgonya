@@ -23,6 +23,15 @@ public class ChangeScene : MonoBehaviour
     {
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            MainLoad();
+        if (Input.GetKeyDown(KeyCode.BackQuote))
+            TutorialLoad();
+
+    }
+
     public void MainLoad()
     {
         SceneManager.LoadScene("Main");
