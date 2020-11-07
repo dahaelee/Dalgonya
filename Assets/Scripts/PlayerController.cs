@@ -107,5 +107,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         // 장애물 태그 별로 다르게 반응하기
+        if (hit.gameObject.tag == "water") 
+            Debug.Log("물웅덩이");
     }
 }
