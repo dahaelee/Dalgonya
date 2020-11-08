@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource bgm_normal, bgm_catnip, nya1, nya2;
     public GameObject catnipSky;
-    public GameObject cat;
 
     public int Life()
     {
@@ -57,18 +56,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow)) {
+        if (Input.GetKey(KeyCode.LeftArrow))
             MoveToLeft();
-            if (IsCatnip())
-                MoveToRight();
-        }
-        if (Input.GetKey(KeyCode.RightArrow)) {
+        if (Input.GetKey(KeyCode.RightArrow))
             MoveToRight();
-            if (IsCatnip())
-                MoveToLeft();
-        }
-        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-            moveDirection.x = 0;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
@@ -106,6 +97,12 @@ public class PlayerController : MonoBehaviour
         if (IsCatnip())
         {
             catnipTime -= Time.deltaTime;
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+                MoveToRight();
+            if (Input.GetKey(KeyCode.RightArrow))
+                MoveToLeft();
+
             catnipSky.SetActive(true);
             bgm_normal.pitch = 2.0f;
         }
@@ -120,7 +117,7 @@ public class PlayerController : MonoBehaviour
     {
         if (IsStun()) // 스턴상태인지 체크
             return;
-        moveDirection.x = -speedX;
+            moveDirection.x = -speedX;
     }
 
     public void MoveToRight()
@@ -167,26 +164,17 @@ public class PlayerController : MonoBehaviour
 
         if (hit.gameObject.tag == "Sil")
         {
-            Destroy(hit.gameObject);
-            nya1.PlayOneShot(nya2.clip);
             gamecont.itemscore = 30;
-            Debug.Log(gamecont.itemscore);
         }
 
         else if (hit.gameObject.tag == "Mouse")
         {
-            Destroy(hit.gameObject);
-            nya1.PlayOneShot(nya2.clip);
             gamecont.itemscore = 50;
-            Debug.Log(gamecont.itemscore);
         }
 
         else if (hit.gameObject.tag == "Tuna")
         {
-            Destroy(hit.gameObject);
-            nya1.PlayOneShot(nya2.clip);
             gamecont.itemscore = 100;
-            Debug.Log(gamecont.itemscore);
         }
     }
 }

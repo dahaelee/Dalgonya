@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
 	void Start()
     {
 		itemscore = 0;
+
 	}
 
 	void Update()
