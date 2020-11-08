@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndController : MonoBehaviour
 {
@@ -19,4 +20,10 @@ public class EndController : MonoBehaviour
     {
         
     }
+
+    public void loadTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }
+
