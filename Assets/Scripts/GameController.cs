@@ -10,8 +10,15 @@ public class GameController : MonoBehaviour
 	public Text scoreLabel;
 	public LifePanel lifePanel;
 	public int itemscore;
-	
-	void Start()
+	public static int score;
+	public static int highscore;
+
+	void Awake()
+    {
+		highscore = 0;
+    }
+
+    void Start()
     {
 		itemscore = 0;
 	}
@@ -19,7 +26,7 @@ public class GameController : MonoBehaviour
 	void Update()
 	{
 		// 점수 업데이트 
-		int score = CalcScore() + itemscore;
+		score = CalcScore() + itemscore;
 		scoreLabel.text = score.ToString();
 
 		// 생명 업데이트
@@ -32,13 +39,11 @@ public class GameController : MonoBehaviour
 			enabled = false;
 
 			// 하이스코어 업데이트
-			if (PlayerPrefs.GetInt("HighScore") < score)
+			if (highscore < score)
 			{
-				PlayerPrefs.SetInt("HighScore", score);
+				highscore = score;
 			}
 
-			// 타이틀 씬으로 돌아가기
-			//loadTitle();
 			loadEnd();
 		}
 	}
