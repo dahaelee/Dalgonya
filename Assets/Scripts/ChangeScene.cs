@@ -10,6 +10,7 @@ public class ChangeScene : MonoBehaviour
     GameObject player, player2, canvas;
     public GameObject prefabTutorial;
     GameObject menu;
+    public bool chk = true;
 
     void Awake()
     {
@@ -30,6 +31,16 @@ public class ChangeScene : MonoBehaviour
             TutorialLoad();
     }
 
+    public void OpenningLoad()
+    {
+        SceneManager.LoadScene("Opennig");
+    }
+
+    public void TitleLoad()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
     public void MainLoad()
     {
         SceneManager.LoadScene("Main");
@@ -37,16 +48,22 @@ public class ChangeScene : MonoBehaviour
 
     public void TutorialLoad()
     {
-        player.GetComponent<PlayerController>().enabled = false;
-        player2.GetComponent<Animator>().enabled = false;
-        GameObject.Find("HelpButton").GetComponent<Button>().enabled = false;
-        Vector3 creatingpoint = canvas.transform.localPosition;
-        menu = Instantiate(prefabTutorial, creatingpoint, Quaternion.identity) as GameObject;
+        if (chk)
+        {
+            chk = false;
+            player.GetComponent<PlayerController>().enabled = false;
+            player2.GetComponent<Animator>().enabled = false;
+            GameObject.Find("HelpButton").GetComponent<Button>().enabled = false;
+            Vector3 creatingpoint = canvas.transform.localPosition;
+            menu = Instantiate(prefabTutorial, creatingpoint, Quaternion.identity) as GameObject;
+        }
+       
        
 
     }
     public void TutorialDelete()
     {
+        chk = true;
         player.GetComponent<PlayerController>().enabled = true;
         player2.GetComponent<Animator>().enabled = true;
         GameObject.Find("HelpButton").GetComponent<Button>().enabled = true;
