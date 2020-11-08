@@ -1592,6 +1592,10 @@ MonoBehaviour:
   character: {fileID: 1368025509}
   stageTips:
   - {fileID: 2576688515028824770, guid: 268a2c95b08b2bb4bb0862f54478360b, type: 3}
+  - {fileID: 2215968529001569832, guid: 41708b12e2fef224abfa1f10698e5b65, type: 3}
+  - {fileID: 6746367787708151442, guid: ba45776ef859c834aa8f313ba22b9bb3, type: 3}
+  - {fileID: 8983338357372316427, guid: 6714d9c9809f109479aa421bd24cb3f5, type: 3}
+  - {fileID: 7172274784836428227, guid: a4e0a9b2ee0e45a4dacd06337753a93a, type: 3}
   startTipIndex: 1
   preInstantiate: 5
   generatedStageList:

@@ -8,11 +8,10 @@ using UnityEngine.UI;
 public class TitleController : MonoBehaviour
 {
 
-	public Text highScore;
 
 	public void Start()
 	{
-		highScore.text = "HIGHSCORE : " + highScore;
+		
 
 	}
 
