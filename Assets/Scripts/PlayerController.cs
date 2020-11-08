@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(hit.gameObject);
             nya1.PlayOneShot(nya2.clip);
-            gamecont.itemscore = 30;
+            gamecont.itemscore += 30;
             Debug.Log(gamecont.itemscore);
         }
 
@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(hit.gameObject);
             nya1.PlayOneShot(nya2.clip);
-            gamecont.itemscore = 50;
+            gamecont.itemscore += 50;
             Debug.Log(gamecont.itemscore);
         }
 
@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(hit.gameObject);
             nya1.PlayOneShot(nya2.clip);
-            gamecont.itemscore = 100;
+            gamecont.itemscore += 100;
             Debug.Log(gamecont.itemscore);
         }
     }
