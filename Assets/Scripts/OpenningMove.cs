@@ -8,11 +8,13 @@ public class OpenningMove : MonoBehaviour
     public GameObject camera;
     Animator animator;
     Animator cameraAnim;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         cameraAnim = camera.GetComponent<Animator>();
         cameraAnim.enabled = false;
+
     }
 
     // Update is called once per frame
