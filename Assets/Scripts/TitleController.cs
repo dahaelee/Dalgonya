@@ -12,7 +12,8 @@ public class TitleController : MonoBehaviour
 
 	public void Start()
 	{
-		
+		highScore.text = "HIGHSCORE : " + highScore;
+
 	}
 
     public void Update()

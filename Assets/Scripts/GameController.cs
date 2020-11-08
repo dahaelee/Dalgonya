@@ -38,7 +38,8 @@ public class GameController : MonoBehaviour
 			}
 
 			// 타이틀 씬으로 돌아가기
-			loadTitle();
+			//loadTitle();
+			loadEnd();
 		}
 	}
 
@@ -51,4 +52,9 @@ public class GameController : MonoBehaviour
 	{
 		SceneManager.LoadScene("Title");
 	}
+
+	void loadEnd()
+    {
+		SceneManager.LoadScene("End");
+    }
 }
