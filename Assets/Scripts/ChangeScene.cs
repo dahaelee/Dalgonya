@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -21,6 +20,14 @@ public class ChangeScene : MonoBehaviour
 
     void Start()
     {
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            MainLoad();
+        if (Input.GetKeyDown(KeyCode.BackQuote))
+            TutorialLoad();
     }
 
     public void MainLoad()

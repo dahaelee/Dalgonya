@@ -67,7 +67,5 @@ public class PlayerAnimator : MonoBehaviour
             gamecont.itemscore = 100;
             SoundManager.PlaySound("itemMusic");
         }
-
-        Debug.Log(gamecont.itemscore);
     }
 }
