@@ -79,36 +79,6 @@ public class ItemCreate : MonoBehaviour
         }
     }
 
-    /* //게임 중간에 랜덤으로 나왔다 사라지고 나왔다 사라지는 코드
-    IEnumerator CreateBark()
-    {
-        while (true)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                int x_id = Random.Range(0, 2);
-                int y_id = Random.Range(0, ry.Count);
-
-                Vector3 creatingPoint = new Vector3(rx[x_id], ry[y_id], rz);
-
-
-                int prefab_id = Random.Range(0, 4);
-
-                if (prefab_id == 0)
-                {
-                    creatingPoint = new Vector3(rx[x_id] + 0.5f, ry[y_id], rz);
-                }
-
-                Instantiate(Prefabs[prefab_id], creatingPoint, Quaternion.identity);
-
-                ry.Remove(ry[y_id]);
-            }
-
-            float creatingTime = Random.Range(mintime, maxtime);
-            yield return new WaitForSeconds(creatingTime);
-        }
-    }*/
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;

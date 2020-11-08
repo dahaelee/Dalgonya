@@ -778,7 +778,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: aaa6d90424e602b4ca16620c12ccb32f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1225,7 +1225,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1098525044}
   - component: {fileID: 1098525042}
-  - component: {fileID: 1098525043}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1247,34 +1246,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabTutorial: {fileID: 2920343870851008922, guid: ac2ca06c6767e8b478f0d17bd365e892,
     type: 3}
-  chk: 1
---- !u!114 &1098525043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098525041}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de90b493119d12046823392fb630f17a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Items:
-  - {fileID: 748918115004085131, guid: d230fd5246cbef24c9d03c00c2013a26, type: 3}
-  - {fileID: 964258033132947274, guid: 27c272e7449f49649b2496e4f73f317c, type: 3}
-  - {fileID: 7516371316338992590, guid: a07aa17f0f450364386dea11dcbcf0c4, type: 3}
-  ltx: -1
-  mdx: 0
-  rtx: 1
-  minz: 6
-  maxz: 30
-  interval: 3
-  z_interval:
-  - 0
-  ry: 0.5
-  num: 5
-  chkObs: 1
 --- !u!4 &1098525044
 Transform:
   m_ObjectHideFlags: 0
@@ -1619,11 +1590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1368025509}
   stageTips:
-  - {fileID: 5368800585234138161, guid: 9cf86929cd9d985449f17d8f07117df0, type: 3}
-  - {fileID: 8633470236145596809, guid: 41708b12e2fef224abfa1f10698e5b65, type: 3}
-  - {fileID: 7576295636404337436, guid: ba45776ef859c834aa8f313ba22b9bb3, type: 3}
-  - {fileID: 1295474144727753033, guid: 6714d9c9809f109479aa421bd24cb3f5, type: 3}
-  - {fileID: 4417454713513829662, guid: a4e0a9b2ee0e45a4dacd06337753a93a, type: 3}
+  - {fileID: 7456468688307329690, guid: 268a2c95b08b2bb4bb0862f54478360b, type: 3}
   startTipIndex: 1
   preInstantiate: 5
   generatedStageList:
@@ -1642,6 +1609,7 @@ GameObject:
   - component: {fileID: 1368025506}
   - component: {fileID: 1368025510}
   - component: {fileID: 1368025511}
+  - component: {fileID: 1368025508}
   m_Layer: 0
   m_Name: cat
   m_TagString: Untagged
@@ -1696,6 +1664,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368025505}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1368025508
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368025505}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1368025509
 Transform:
   m_ObjectHideFlags: 0
@@ -1742,7 +1726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 20
-  speedZ: 7
+  speedZ: 6
   speedX: 3
   speedJump: 8
   accelerationZ: 30
@@ -1751,6 +1735,7 @@ MonoBehaviour:
   nya1: {fileID: 264034980}
   nya2: {fileID: 1087713653}
   catnipSky: {fileID: 593564407}
+  cat: {fileID: 0}
 --- !u!1 &1395762084
 GameObject:
   m_ObjectHideFlags: 0
