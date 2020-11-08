@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioClip normalMusic, reverseMusic, itemMusic, obsMusic, clickMusic;
+    public static AudioClip normalMusic, reverseMusic, itemMusic, obsMusic, clickMusic;
 
-    AudioSource audioSrc;
+    static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    public void PlaySound(string clip)
+    public static void PlaySound(string clip)
     {
         switch (clip)
         {

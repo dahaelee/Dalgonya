@@ -39,10 +39,12 @@ public class PlayerAnimator : MonoBehaviour
         if (hit.gameObject.tag == "heartminus")
         {
             anima.SetInteger("Input", -1);
+            SoundManager.PlaySound("obsMusic");
         }
         else if (hit.gameObject.tag == "reverse")
         {
             anima.SetInteger("Input", 2);
+            SoundManager.PlaySound("obsMusic");
         }
         
         else anima.SetInteger("Input", 0);
@@ -50,16 +52,20 @@ public class PlayerAnimator : MonoBehaviour
         if (hit.gameObject.tag == "Sil")
         {
             gamecont.itemscore = 30;
+
+            SoundManager.PlaySound("itemMusic");
         }
 
         else if (hit.gameObject.tag == "Mouse")
         {
             gamecont.itemscore = 50;
+            SoundManager.PlaySound("itemMusic");
         }
 
         else if(hit.gameObject.tag == "Tuna")
         {
             gamecont.itemscore = 100;
+            SoundManager.PlaySound("itemMusic");
         }
 
         Debug.Log(gamecont.itemscore);
