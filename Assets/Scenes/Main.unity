@@ -1246,6 +1246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabTutorial: {fileID: 2920343870851008922, guid: ac2ca06c6767e8b478f0d17bd365e892,
     type: 3}
+  chk: 1
 --- !u!4 &1098525044
 Transform:
   m_ObjectHideFlags: 0
@@ -1590,7 +1591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1368025509}
   stageTips:
-  - {fileID: 7456468688307329690, guid: 268a2c95b08b2bb4bb0862f54478360b, type: 3}
+  - {fileID: 2576688515028824770, guid: 268a2c95b08b2bb4bb0862f54478360b, type: 3}
   startTipIndex: 1
   preInstantiate: 5
   generatedStageList:
